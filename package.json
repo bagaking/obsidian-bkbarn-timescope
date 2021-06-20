@@ -1,8 +1,13 @@
 {
   "name": "bkbarn-timescope",
   "version": "0.5.8",
-  "description": "A plugin to help you plan your day and setup pomodoro timers",
-  "main": "main.js",
+  "description": "An Obsidian plugin for time-scoped daily planning",
+  "main": "dist/main.js",
+  "files": [
+    "dist/main.js",
+    "manifest.json",
+    "styles.css"
+  ],
   "scripts": {
     "dev": "rollup --config rollup.config.js -w",
     "build": "rollup --config rollup.config.js",
@@ -11,8 +16,13 @@
     "test": "cross-env TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' mocha -r ts-node/register -r ignore-styles -r jsdom-global/register tests/**/*.test.ts",
     "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "planning",
+    "timeline"
+  ],
+  "author": "BKBarn Timescope maintainers",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",

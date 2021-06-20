@@ -1,9 +1,9 @@
 {
   "id": "bkbarn-timescope",
-  "name": "Day Planner",
+  "name": "BKBarn Timescope",
   "version": "0.5.8",
   "minAppVersion": "0.9.10",
-  "description": "A plugin to help you plan your day and setup pomodoro timers",
+  "description": "An Obsidian plugin for time-scoped daily planning",
   "author": "BKBarn Timescope maintainers",
   "isDesktopOnly": false,
   "js": "main.js",
