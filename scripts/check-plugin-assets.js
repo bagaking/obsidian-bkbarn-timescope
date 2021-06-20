@@ -42,6 +42,17 @@ try {
   if (manifest.version !== packageJson.version) {
     fail(`manifest version ${manifest.version} does not match package version ${packageJson.version}`);
   }
+
+  const releaseAssetFields = {
+    js: 'main.js',
+    css: 'styles.css',
+  };
+
+  for (const [field, expectedFile] of Object.entries(releaseAssetFields)) {
+    if (manifest[field] && manifest[field] !== expectedFile) {
+      fail(`manifest ${field} ${manifest[field]} does not match release asset ${expectedFile}`);
+    }
+  }
 } catch (error) {
   fail(error.message);
 }

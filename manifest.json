@@ -5,5 +5,5 @@
   "description": "A plugin to help you plan your day and setup pomodoro timers",
   "isDesktopOnly": false,
   "js": "main.js",
-  "css": "style.css"
+  "css": "styles.css"
 }
