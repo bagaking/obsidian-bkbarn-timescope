@@ -39,12 +39,20 @@ try {
     }
   }
 
+  if (typeof manifest.id === 'string' && manifest.id.toLowerCase().includes('obsidian')) {
+    fail('manifest id must not contain "obsidian"');
+  }
+
   if (typeof manifest.isDesktopOnly !== 'boolean') {
-    fail('manifest.json is missing "isDesktopOnly"');
+    fail('manifest.json "isDesktopOnly" must be a boolean');
   }
 
   if (manifest.version !== packageJson.version) {
     fail(`manifest version ${manifest.version} does not match package version ${packageJson.version}`);
+  }
+
+  if (manifest.id !== packageJson.name) {
+    fail(`manifest id ${manifest.id} does not match package name ${packageJson.name}`);
   }
 
   const releaseAssetFields = {

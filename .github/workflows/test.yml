@@ -12,9 +12,6 @@ on:
 permissions:
   contents: read
 
-env:
-  PLUGIN_NAME: obsidian-day-planner # Change this to the name of your plugin-id folder
-
 jobs:
   build:
 
@@ -31,7 +28,8 @@ jobs:
       run: | 
         npm install
         npm run verify
-        mkdir ${{ env.PLUGIN_NAME }}
-        cp dist/main.js manifest.json styles.css ${{ env.PLUGIN_NAME }}
-        zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
+        PLUGIN_NAME="$(node -p "require('./manifest.json').id")"
+        mkdir "$PLUGIN_NAME"
+        cp dist/main.js manifest.json styles.css "$PLUGIN_NAME"
+        zip -r "$PLUGIN_NAME.zip" "$PLUGIN_NAME"
         ls

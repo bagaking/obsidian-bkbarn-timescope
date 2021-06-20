@@ -235,7 +235,7 @@ As of version [0.9.7 of Obsidian](https://forum.obsidian.md/t/obsidian-release-v
 ## Manual installation
 
 1. Download the [latest release](https://github.com/bagaking/obsidian-bkbarn-timescope/releases/latest)
-1. Extract the obsidian-day-planner folder from the zip to your vault's plugins folder: `<vault>/.obsidian/plugins/`  
+1. Extract the `bkbarn-timescope` folder from the zip to your vault's plugins folder: `<vault>/.obsidian/plugins/`
 Note: On some machines the `.obsidian` folder may be hidden. On MacOS you should be able to press `Command+Shift+Dot` to show the folder in Finder.
 1. Reload Obsidian
 1. If prompted about Safe Mode, you can disable safe mode and enable the plugin.
@@ -243,7 +243,7 @@ Note: On some machines the `.obsidian` folder may be hidden. On MacOS you should
 ## For developers
 Pull requests are both welcome and appreciated. 😀
 
-Use `npm run verify` before opening a pull request. It builds the plugin, checks that the required plugin assets are present (`manifest.json`, `styles.css`, and `dist/main.js`), and runs the test suite.
+Use `npm run verify` before opening a pull request. It builds the plugin, checks that the required plugin assets are present (`manifest.json`, `styles.css`, and `dist/main.js`), validates the Obsidian manifest metadata, and runs the test suite.
 
 If you would like to contribute to the development of this plugin, please follow the guidelines provided in [CONTRIBUTING.md](CONTRIBUTING.md).
 

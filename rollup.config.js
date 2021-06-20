@@ -4,8 +4,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import copy from 'rollup-plugin-copy';
 import svelte from "rollup-plugin-svelte";
 import autoPreprocess from 'svelte-preprocess';
+import manifest from './manifest.json';
 
-const TEST_VAULT = 'test-vault/.obsidian/plugins/obsidian-day-planner';
+const TEST_VAULT = `test-vault/.obsidian/plugins/${manifest.id}`;
 
 export default {
   input: 'src/main.ts',
