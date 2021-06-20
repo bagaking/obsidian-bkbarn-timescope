@@ -4,8 +4,11 @@ export const DATE_REGEX = /(?<target>{{date:?(?<date>[^}]*)}})/g;
 export const DAY_PLANNER_FILENAME = 'Day Planner-{{date}}.md';
 
 //https://regex101.com/r/VAxRnc/8
+const REGEXP_METACHARACTERS = new RegExp('[.*+?^${}()|[\\]\\\\]', 'g');
+const escapeRegExp = (input: string): string => input.replace(REGEXP_METACHARACTERS, '\\$&');
+
 export const PLAN_PARSER_REGEX_CREATOR = (breakLabel: string, endLabel: string) =>
-  new RegExp('^(((-?[\\s]*\\[?(?<completion>[x ]*)\\])(\\d.)?\\s*?(?<hours>\\d{1,2}):(?<minutes>\\d{2})\\s)((?<break>' + breakLabel + '[\\n ]?)|(?<end>' + endLabel + '[\\n ]?)|((?<text>.*))))$', 'gmi');
+  new RegExp('^(((-?[\\s]*\\[?(?<completion>[x ]*)\\])(\\d.)?\\s*?(?<hours>\\d{1,2}):(?<minutes>\\d{2})\\s)((?<break>' + escapeRegExp(breakLabel) + '[\\n ]?)|(?<end>' + escapeRegExp(endLabel) + '[\\n ]?)|((?<text>.*))))$', 'gmi');
 
 export const MERMAID_REGEX = /```mermaid\ngantt[\S\s]*?```\s*/gmi;
 

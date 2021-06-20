@@ -57,4 +57,23 @@ describe('parser', () => {
     expect(ninthItem.rawTime).to.eql('14:00');
     expect(ninthItem.text).to.eql('🛑 FINISH');
   });
+
+  it('should parse break and end labels that include regexp metacharacters', async () => {
+    const settings = new DayPlannerSettings();
+    settings.breakLabel = 'BREAK (short)+';
+    settings.endLabel = 'END [done].';
+
+    const parser = new Parser(settings);
+
+    const results = await parser.parseMarkdown([
+      '- [ ] 10:00 BREAK (short)+',
+      '- [ ] 11:00 END [done].',
+    ]);
+
+    expect(results.items).to.have.lengthOf(2);
+    expect(results.items[0].isBreak).to.be.true;
+    expect(results.items[0].text).to.eql(settings.breakLabel);
+    expect(results.items[1].isEnd).to.be.true;
+    expect(results.items[1].text).to.eql(settings.endLabel);
+  });
 });
