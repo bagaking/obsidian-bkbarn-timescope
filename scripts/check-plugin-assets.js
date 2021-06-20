@@ -33,10 +33,14 @@ try {
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
 
-  for (const field of ['id', 'name', 'version']) {
-    if (!manifest[field]) {
+  for (const field of ['id', 'name', 'version', 'description', 'author', 'minAppVersion']) {
+    if (typeof manifest[field] !== 'string' || manifest[field].trim() === '') {
       fail(`manifest.json is missing "${field}"`);
     }
+  }
+
+  if (typeof manifest.isDesktopOnly !== 'boolean') {
+    fail('manifest.json is missing "isDesktopOnly"');
   }
 
   if (manifest.version !== packageJson.version) {

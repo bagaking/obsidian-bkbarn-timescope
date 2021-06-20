@@ -2,7 +2,9 @@
   "id": "obsidian-day-planner",
   "name": "Day Planner",
   "version": "0.5.8",
+  "minAppVersion": "0.9.10",
   "description": "A plugin to help you plan your day and setup pomodoro timers",
+  "author": "BKBarn Timescope maintainers",
   "isDesktopOnly": false,
   "js": "main.js",
   "css": "styles.css"
