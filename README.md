@@ -1,9 +1,9 @@
-# Day Planner
+# BKBarn Timescope
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lynchjames/obsidian-day-planner/Release%20Build?logo=github&style=for-the-badge) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lynchjames/obsidian-day-planner?style=for-the-badge&sort=semver)
+![CI Test](https://img.shields.io/github/actions/workflow/status/bagaking/obsidian-bkbarn-timescope/test.yml?branch=main&label=CI%20Test&logo=github&style=for-the-badge) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/bagaking/obsidian-bkbarn-timescope?style=for-the-badge&sort=semver)
 
 
-This repository contains a plugin for [Obsidian](https://obsidian.md/) for day planning and managing pomodoro timers from a task list in a Markdown note. 
+This repository contains an [Obsidian](https://obsidian.md/) plugin for time-scoped day planning and managing pomodoro timers from a task list in a Markdown note.
 
 > This is an early alpha of version of the plugin and it will be running constantly in the background while Obsidian is open and the plugin is enabled. **Please try the plugin in a test vault first, and, most importantly, make sure you have your notes backed up in cloud storage or Git.**
     
@@ -234,7 +234,7 @@ As of version [0.9.7 of Obsidian](https://forum.obsidian.md/t/obsidian-release-v
 
 ## Manual installation
 
-1. Download the [latest release](https://github.com/lynchjames/obsidian-day-planner/releases/latest)
+1. Download the [latest release](https://github.com/bagaking/obsidian-bkbarn-timescope/releases/latest)
 1. Extract the obsidian-day-planner folder from the zip to your vault's plugins folder: `<vault>/.obsidian/plugins/`  
 Note: On some machines the `.obsidian` folder may be hidden. On MacOS you should be able to press `Command+Shift+Dot` to show the folder in Finder.
 1. Reload Obsidian
