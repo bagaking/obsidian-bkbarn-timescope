@@ -133,6 +133,9 @@ export default class DayPlanner extends Plugin {
         
         const view = this.app.workspace.activeLeaf.view;
         const filePath = view.getState().file;
+        if (typeof filePath !== 'string') {
+          return;
+        }
         const dayPlannerExists = this.notesForDatesQuery.exists(this.settings.notesToDates);
         const activeDayPlannerPath = this.notesForDatesQuery.active(this.settings.notesToDates)?.notePath;
         
