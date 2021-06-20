@@ -243,6 +243,8 @@ Note: On some machines the `.obsidian` folder may be hidden. On MacOS you should
 ## For developers
 Pull requests are both welcome and appreciated. 😀
 
+Use `npm run verify` before opening a pull request. It builds the plugin, checks that the required plugin assets are present (`manifest.json`, `styles.css`, and `dist/main.js`), and runs the test suite.
+
 If you would like to contribute to the development of this plugin, please follow the guidelines provided in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Donating

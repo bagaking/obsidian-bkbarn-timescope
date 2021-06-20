@@ -2,9 +2,8 @@ import {
   Plugin,
   TAbstractFile,
   Vault,
-  WorkspaceLeaf, 
+  WorkspaceLeaf,
 } from 'obsidian';
-import type { Editor } from 'codemirror';
 import { DayPlannerSettingsTab } from './settings-tab';
 import { DayPlannerSettings, DayPlannerMode, NoteForDate, NoteForDateQuery } from './settings';
 import StatusBar from './status-bar';

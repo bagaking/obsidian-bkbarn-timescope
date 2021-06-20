@@ -17,7 +17,24 @@ export default {
   },
   external: ['obsidian'],
   plugins: [
-    typescript(),
+    typescript({
+      include: [
+        'src/constants.ts',
+        'src/file.ts',
+        'src/main.ts',
+        'src/mermaid.ts',
+        'src/moment-date-regex.ts',
+        'src/parser.ts',
+        'src/plan-data.ts',
+        'src/planner-md.ts',
+        'src/progress.ts',
+        'src/settings-tab.ts',
+        'src/settings.ts',
+        'src/status-bar.ts',
+        'src/timeline-store.ts',
+        'src/timeline-view.ts',
+      ]
+    }),
     nodeResolve({browser: true}),
     commonjs(),
     svelte({

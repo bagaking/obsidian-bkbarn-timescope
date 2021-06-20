@@ -30,12 +30,8 @@ jobs:
       id: build
       run: | 
         npm install
-        npm run build --if-present
+        npm run verify
         mkdir ${{ env.PLUGIN_NAME }}
-        cp dist/main.js manifest.json ${{ env.PLUGIN_NAME }}
+        cp dist/main.js manifest.json styles.css ${{ env.PLUGIN_NAME }}
         zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
         ls
-    - name: Test
-      id: test
-      run: |
-        npm run test
