@@ -6,6 +6,9 @@ on:
     tags:
     - '*' # Push events to matching any tag format, i.e. 1.0, 20.15.10
 
+permissions:
+  contents: read
+
 env:
   PLUGIN_NAME: obsidian-day-planner # Change this to the name of your plugin-id folder
 
@@ -13,11 +16,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Use Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: '14.x' # You might need to adjust this value to your own version
     - name: Build
@@ -29,7 +34,7 @@ jobs:
         cp dist/main.js manifest.json ${{ env.PLUGIN_NAME }}
         zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
         ls
-        echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+        echo "tag_name=$(git tag --sort version:refname | tail -n 1)" >> "$GITHUB_OUTPUT"
     - name: Test
       id: test
       run: |

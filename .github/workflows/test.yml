@@ -9,6 +9,9 @@ on:
     branches:
       - feature/*
 
+permissions:
+  contents: read
+
 env:
   PLUGIN_NAME: obsidian-day-planner # Change this to the name of your plugin-id folder
 
