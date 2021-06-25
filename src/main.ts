@@ -25,7 +25,7 @@ export default class DayPlanner extends Plugin {
   timelineView: TimelineView;
 
   async onload() {
-    console.log("Loading Day Planner plugin");
+    console.log("Loading BKBarn Timescope");
     this.vault = this.app.vault;
     this.settings = Object.assign(new DayPlannerSettings(), await this.loadData());
     this.notesForDatesQuery = new NoteForDateQuery();
@@ -117,7 +117,7 @@ export default class DayPlanner extends Plugin {
 
     modeGuard(command: () => any): void {
       if(this.settings.mode !== DayPlannerMode.Command) {
-        new Notification('Day Planner plugin in File mode', {silent: true, body: 'Switch to Command mode in settings to use this command'});
+        new Notification('BKBarn Timescope in File mode', {silent: true, body: 'Switch to Command mode in settings to use this command'});
         return;
       } else {
         command();
@@ -181,7 +181,7 @@ export default class DayPlanner extends Plugin {
     }
 
     onunload() {
-      console.log("Unloading Day Planner plugin");
+      console.log("Unloading BKBarn Timescope");
       this.app.workspace
       .getLeavesOfType(VIEW_TYPE_TIMELINE)
       .forEach((leaf) => leaf.detach());

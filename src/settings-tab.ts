@@ -140,7 +140,7 @@ import { ICONS } from './constants';
 
     private modeDescriptionContent(): DocumentFragment {
       const descEl = document.createDocumentFragment();
-      descEl.appendText('Choose between 2 modes to use the Day Planner plugin:');
+      descEl.appendText('Choose between 2 modes to use BKBarn Timescope:');
       descEl.appendChild(document.createElement('br'));
       descEl.appendChild(document.createElement('strong')).appendText('File mode');
       descEl.appendChild(document.createElement('br'));
@@ -156,7 +156,7 @@ import { ICONS } from './constants';
 
     private addDocsLink(descEl: DocumentFragment) {
       const a = document.createElement('a');
-      a.href = 'https://github.com/lynchjames/obsidian-day-planner/blob/main/README.md';
+      a.href = 'https://github.com/bagaking/obsidian-bkbarn-timescope/blob/main/README.md';
       a.text = 'plugin README';
       a.target = '_blank';
       descEl.appendChild(a);
