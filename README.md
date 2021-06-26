@@ -5,7 +5,7 @@
 
 BKBarn Timescope is an Obsidian plugin for time-scoped daily planning. It tracks timed checklist items in Markdown notes, shows day progress in the status bar, and can render timeline or Mermaid Gantt views from the same plan.
 
-This project is maintained as `bkbarn-timescope`. It is derived from the Day Planner plugin codebase, but this repository, package, release assets, and validation flow are owned here.
+This project is maintained as `bkbarn-timescope`. It is derived from an earlier daily-planner codebase, but this repository, package, release assets, and validation flow are owned here.
 
 ## Current Status
 

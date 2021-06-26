@@ -5,8 +5,8 @@ on:
     branches:
       - main
   push:
-    # Sequence of patterns matched against refs/tags
     branches:
+      - main
       - feature/*
 
 permissions:
